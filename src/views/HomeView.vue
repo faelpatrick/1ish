@@ -11,17 +11,21 @@ const links = [
 <template>
   <div class="wrap">
     <header class="top">
-      <div class="brand">
+  <div class="brand">
+    <div class="brandRow">
+      <img class="logo" src="/logo.png" alt="Logo 1ISH" />
+      <div>
         <div class="badge">1ISH</div>
         <h1>1 ideia. 1 site. 1 hora.</h1>
         <p>Hub principal. Aqui lista os desafios e direciona para as OnePages.</p>
       </div>
+    </div>
+  </div>
 
-      <nav class="nav">
-        <a v-for="l in links" :key="l.href" :href="l.href">{{ l.label }}</a>
-      </nav>
-    </header>
-
+  <nav class="nav">
+    <a v-for="l in links" :key="l.href" :href="l.href">{{ l.label }}</a>
+  </nav>
+</header>
     <main class="grid">
       <section class="card wide">
         <h2>Como funciona</h2>
@@ -68,6 +72,22 @@ const links = [
   margin: 8px 0 4px;
   font-size: 32px;
   line-height: 1.1;
+}
+
+.brandRow {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 14px;
+  border: 1px solid #1d1d1d;
+  background: #0b0b0b;
+  padding: 8px;
 }
 
 .brand p {
